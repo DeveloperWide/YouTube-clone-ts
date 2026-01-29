@@ -1,27 +1,13 @@
-import { useEffect } from "react";
+import { Route, Routes } from "react-router";
+import Signup from "./pages/Signup";
+import Login from "./pages/Login";
 
 const App = () => {
-  useEffect(() => {
-    fetch("http://localhost:5000/")
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((er) => {
-        console.log(er);
-      });
-  });
   return (
-    <div className="yt flex h-screen justify-center items-center">
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png"
-        alt="YouTube Logo"
-        className="h-10 pr-2"
-      />
-      <h1 className="text-5xl text-red-600 font-semibold">YouTube Clone</h1>
-    </div>
+    <Routes>
+      <Route path="signup" element={<Signup />} />
+      <Route path="login" element={<Login />} />
+    </Routes>
   );
 };
 

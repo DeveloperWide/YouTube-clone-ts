@@ -1,1 +1,20 @@
 @import "tailwindcss";
+
+.name-input,
+.email-input,
+.password-input {
+  @apply flex flex-col w-[90%];
+}
+
+label {
+  @apply text-[#666262] font-semibold;
+}
+
+input {
+  @apply h-10 bg-[#D8D2D2] rounded-lg text-[#631010] py-2 px-2 font-semibold  focus:outline-none;
+}
+
+.form {
+  border-radius: 12px;
+  box-shadow: 3px 4px 43px 4px rgba(112, 40, 40, 1);
+}
