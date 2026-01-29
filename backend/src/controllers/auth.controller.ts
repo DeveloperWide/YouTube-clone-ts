@@ -34,7 +34,7 @@ export const signup = async (req: Request<{}, {}, IUser>, res: Response) => {
 
 export const login = async (
   req: Request<{}, {}, Omit<IUser, "name">>,
-  res: Response
+  res: Response,
 ) => {
   const { email, password } = req.body;
   const user = await User.findOne({ email: email });
@@ -47,7 +47,7 @@ export const login = async (
 
   if (user.password !== password) {
     return res.status(400).json({
-      message: "Wrong Crendtials",
+      message: "Wrong Crendentials",
     });
   }
 
